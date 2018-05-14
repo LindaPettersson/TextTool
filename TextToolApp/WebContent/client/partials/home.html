@@ -1,0 +1,23 @@
+<!-- Start Page -->
+<div class="jumbotron">
+	<div class="container" id="startpage-container" ng-controller="homeController">
+		<div id="public-header">
+			<h1>StackFilter</h1>
+			<h3>Hitta lätt i stacktrace</h3>
+		</div>
+		<div id="startpage-buttons">
+			<button type="button" class="btn btn-dark btn-sm m-1">
+				<i class="fas fa-user-plus"></i> Registrera
+			</button>
+			<button type="button" class="btn btn-dark btn-sm m-1"
+				ng-click="GoToLogin()">
+				<i class="fas fa-sign-in-alt"></i> Logga in
+			</button>
+		</div>
+		<div id="startpage-links">
+			<button type="button" class="btn btn-link btn-sm">
+				<i class="fas fa-key"></i> Glömt lösenord
+			</button>
+		</div>
+	</div>
+</div>

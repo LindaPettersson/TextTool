@@ -1,0 +1,25 @@
+<!-- Summary types -->
+<div class="container" ng-controller="summarytypesController">
+<div class="row">
+		<div id="arrow-back" class="col-sm-2 offset-1" ng-click="goToChoosefiles()">
+			<i class="fas fa-caret-left fa-5x"></i>
+		</div>
+		<div id="view-header" class="col-sm-8">
+			<h3>VÄLJ STACKTRACE</h3>
+		</div>
+		<div class="col-sm-1"></div>
+	</div>
+	<div class="col-sm-10 offset-1">
+	<table ng-table="tableParams" class="table" show-filter="true">
+		<tr ng-repeat="type in $data">
+			<td title="'Datum'" filter="{ date: 'text'}" sortable="'date'">
+				{{type.date}}</td>
+			<td title="'Feltyp'" filter="{ name: 'text'}" sortable="'name'">
+				{{type.name}}</td>
+			<td title="'Antal'" filter="{ amount: 'number'}" sortable="'amount'">
+				{{type.amount}}</td>
+		</tr>
+	</table>
+	</div>
+	<div class="col-sm-1"></div>
+</div>

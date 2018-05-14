@@ -1,0 +1,80 @@
+<!-- Choose Files -->
+<div class="container" id="choosefiles-container"
+	ng-controller="choosefilesController">
+
+	<div class="row">
+		<div class="col-sm-2 offset-1"></div>
+		<div id="view-header" class="col-sm-8">
+			<h3>VÄLJ STACKTRACE</h3>
+		</div>
+		<div class="col-sm-1"></div>
+	</div>
+
+	<form action="/api/file/upload" method="post"
+		enctype="multipart/form-data" id="choosefiles-form">
+		<div class="row mt-5">
+			<div class="col-sm-2 offset-1">
+				<h1>1</h1>
+			</div>
+			<div class="col-sm-8">
+				<p>HÄMTA FIL</p>
+				<!-- <label for="file-upload" class="custom-file-upload">Välj fil</label><input
+					id="file-upload" type="file" name="stacktraceFile"
+					ng-file-model="files" /> -->
+					<label for="file-upload" class="custom-file-upload">Välj fil</label><input
+					id="file-upload" type="file" name="stacktraceFile"
+					on-read-file="showContent($fileContent)" />
+				<!-- add 'multiple' to input if multiple files -->
+				<br>
+				<p id="filename" ng-repeat="file in files">{{file.name}}</p>
+			</div>
+			<div class="col-sm-1"></div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-sm-2 offset-1">
+				<h1>2</h1>
+			</div>
+			<div class="col-sm-8">
+				<p>LADDA UPP</p>
+				<!-- <button type="submit" class="btn btn-success btn-sm">Fortsätt</button> -->
+				
+				
+				<div ng-if="content">
+					<h2>File content is:</h2>
+					<pre>{{ content }}</pre>
+				</div>
+			</div>
+			<div class="col-sm-1"></div>
+		</div>
+	</form>
+
+
+
+
+
+
+
+	<!-- <div class="row" id="choosefiles-step">
+			<div id="step">
+				<h1>1</h1>
+			</div>
+			<div id="action">
+				<p>VÄLJ STACKTRACE</p>
+				<input name="stacktraceFile" type="file" ng-file-model="files"  /> add 'multiple' if multiple files
+				<br>
+				<p ng-repeat="file in files">{{file.name}}</p>
+			</div>
+		</div>
+		<div class="row" id="choosefiles-step">
+			<div id="step">
+				<h1>2</h1>
+			</div>
+			<div id="action">
+				<p>TILL ÖVERSIKT</p>
+				<button type="button" class="btn btn-default btn-sm"
+					ng-click="uploadFile()">Fortsätt</button> 
+			</div>
+		</div> -->
+
+</div>
